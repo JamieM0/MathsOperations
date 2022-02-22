@@ -1,0 +1,13 @@
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\bin\Debug\MathsOperations.exe.config
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\bin\Debug\MathsOperations.exe
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\bin\Debug\MathsOperations.pdb
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.csproj.AssemblyReference.cache
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.Properties.Resources.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.csproj.GenerateResource.cache
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.csproj.CoreCompileInputs.cache
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.exe
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.pdb
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmAverage.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmHome.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmSettings.resources
