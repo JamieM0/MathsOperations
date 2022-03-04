@@ -117,4 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt</value>
+  </data>
+  <data name="lbTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <data name="lbTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>690, 150</value>
+  </data>
+  <data name="lbTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbTitle.Text" xml:space="preserve">
+    <value>Calculate the Average (mean) of numbers you input.
+Does not take anomalies into account, please use a different program to do this.
+Separate each value / number with a: "$characterseparate}" when inputting all of
+the numbers below, or your text file, before selecting.
+
+It can also do lots more! Just select your function from the drop down box!</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
 </root>

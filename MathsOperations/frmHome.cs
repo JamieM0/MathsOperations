@@ -47,7 +47,7 @@ namespace MathsOperations
         private void btnGoToAverage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new frmAverage().Show();
+            new frmInstructions/*Average*/().Show();
         }
     }
 }

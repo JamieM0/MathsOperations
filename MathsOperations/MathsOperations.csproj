@@ -65,6 +65,12 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstructions.Designer.cs">
+      <DependentUpon>frmInstructions.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructions.aa.resx">
+      <DependentUpon>frmInstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructions.resx">
+      <DependentUpon>frmInstructions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>

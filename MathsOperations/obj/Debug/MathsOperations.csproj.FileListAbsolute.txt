@@ -11,3 +11,7 @@ C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\
 C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmAverage.resources
 C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmHome.resources
 C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmSettings.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmInstructions.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\MathsOperations.frmInstructions.aa.resources
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\bin\Debug\aa\MathsOperations.resources.dll
+C:\Users\Jamie\Documents\GitHub\MathsOperations\MathsOperations\MathsOperations\obj\Debug\aa\MathsOperations.resources.dll
