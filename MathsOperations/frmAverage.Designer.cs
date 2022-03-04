@@ -38,14 +38,15 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSettings
             // 
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(518, 110);
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Location = new System.Drawing.Point(364, 12);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(314, 33);
+            this.btnSettings.Size = new System.Drawing.Size(362, 36);
             this.btnSettings.TabIndex = 1;
             this.btnSettings.Text = "Change separation character in settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -147,11 +148,23 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Mode:";
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpen.Location = new System.Drawing.Point(176, 12);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(182, 36);
+            this.btnOpen.TabIndex = 11;
+            this.btnOpen.Text = "Open number file";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // frmAverage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 489);
+            this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbDone);
@@ -181,5 +194,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOpen;
     }
 }

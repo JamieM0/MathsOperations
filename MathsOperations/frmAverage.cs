@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Linq;
+using System.IO;
 
 namespace MathsOperations
 {
@@ -25,6 +26,7 @@ namespace MathsOperations
             lbPercentageDone.Visible = false;
             lbDone.Visible = false;
             progressBar1.Visible = false;
+            CenterToScreen();
         }
         //""
         private void frmAverage_Load(object sender, EventArgs e)
@@ -48,23 +50,27 @@ namespace MathsOperations
         {
             if (comboBox1.Text == "Average")
             {
-                Average();
+                Average("a");
             }
             else if (comboBox1.Text == "Multiplication")
             {
-                Multiplication();
+                //Multiplication();
+                Average("b");
             }
             else if (comboBox1.Text == "Addition")
             {
-                Addition();
+                //Addition();
+                Average("c");
             }
             else if (comboBox1.Text == "Subtraction")
             {
-                Subtraction();
+                /*Subtraction*//*()*//*;*/
+                Average("d");
             }
             else if (comboBox1.Text == "Divison")
             {
-                Division();
+                //Division();
+                Average("e");
             }
             else
             {
@@ -72,7 +78,7 @@ namespace MathsOperations
             }
         }
 
-        private void Average()
+        private void Average(string code)
         {
             lbPercentageDone.Visible = true;
             lbDone.Visible = true;
@@ -103,42 +109,120 @@ namespace MathsOperations
             //    //string[] numsina = numsintrimmed.Split($"");
             //}
 
-            int length = numsina.Length;
-            double total = 0;
-            for (int i = 0; i < numsina.Length; i++)
+            if (code == "a" || code == "c"/* || code == "c"*/)
             {
-                total = total + Convert.ToDouble(numsina[i]);
-                pdone = i / numsina.Length * 100;
-                lbDone.Text = pdone.ToString() + "%";
-                //progressBar1.
-                if (pdone <= 25)
+                int length = numsina.Length;
+                double total = 0;
+                for (int i = 0; i < numsina.Length; i++)
                 {
-                    lbDone.ForeColor = Color.Red;
+                    total = total + Convert.ToDouble(numsina[i]);
+                    pdone = i / numsina.Length * 100;
+                    lbDone.Text = pdone.ToString() + "%";
+                    //progressBar1.
+                    if (pdone <= 25)
+                    {
+                        lbDone.ForeColor = Color.Red;
+                    }
+                    else if (pdone > 25 && pdone <= 80)
+                    {
+                        lbDone.ForeColor = Color.Orange;
+                    }
+                    else if (pdone < 100)
+                    {
+                        lbDone.ForeColor = Color.LawnGreen;
+                    }
+                    else
+                    {
+                        lbDone.ForeColor = Color.DarkGreen;
+                    }
                 }
-                else if (pdone > 25 && pdone <= 80)
+                lbDone.Text = /*pdone.ToString() + */"100%";
+                lbDone.ForeColor = Color.DarkGreen;
+                switch (code)
                 {
-                    lbDone.ForeColor = Color.Orange;
-                }
-                else if (pdone < 100)
-                {
-                    lbDone.ForeColor = Color.LawnGreen;
-                }
-                else
-                {
-                    lbDone.ForeColor = Color.DarkGreen;
+                    case "a":
+                        double average = total / numsina.Length;
+                        lbAverage.Text = ($"Average: {average}");
+                        break;
+                    case "c":
+                        //double average = total / numsina.Length;
+                        lbAverage.Text = ($"Total: {total}");
+                        break;
+                    //case "c":
+                        
+                    //    break;
                 }
             }
-            lbDone.Text = /*pdone.ToString() + */"100%";
-            lbDone.ForeColor = Color.DarkGreen;
-            double average = total / numsina.Length;
+            else if (code == "b"/*b*/)
+            {
+                int length = numsina.Length;
+                double product = 1;
+                for(int i = 0; i < numsina.Length; i++)
+                {
+                    product = product * Convert.ToDouble(numsina[i]);
+                    pdone = i / numsina.Length * 100;
+                    lbDone.Text = pdone.ToString() + "%";
+                    //progressBar1.
+                    if (pdone <= 25)
+                    {
+                        lbDone.ForeColor = Color.Red;
+                    }
+                    else if (pdone > 25 && pdone <= 80)
+                    {
+                        lbDone.ForeColor = Color.Orange;
+                    }
+                    else if (pdone < 100)
+                    {
+                        lbDone.ForeColor = Color.LawnGreen;
+                    }
+                    else
+                    {
+                        lbDone.ForeColor = Color.DarkGreen;
+                    }
+                }
+                lbDone.Text = /*pdone.ToString() + */"100%";
+                lbDone.ForeColor = Color.DarkGreen;
+                lbAverage.Text = ($"Product: {product.ToString()}");
+            }
+            else
+            {
+
+            }
+            
             lbAverage.Enabled = true;
             lbAverage.Visible = true;
-            lbAverage.Text = ($"Average: {average}");
+            
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            string filePathOpen;
+            string fileContentOpen;
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                ofd.RestoreDirectory = true;
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of the specified file
+                    filePathOpen = ofd.FileName;
+
+                    //Read the contents of this file into a stream
+                    var fileStream = ofd.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContentOpen = reader.ReadToEnd();
+                    }
+
+                    txtNums.Text = fileContentOpen;
+                }
+            }
         }
     }
 }

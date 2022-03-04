@@ -31,6 +31,7 @@ namespace MathsOperations
             {
 
             }
+            CenterToScreen();
         }
 
         private void frmHome_Load(object sender, EventArgs e)
