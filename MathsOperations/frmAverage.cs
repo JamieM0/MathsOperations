@@ -48,33 +48,42 @@ namespace MathsOperations
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Average")
+            if (txtNums.Text.Contains(String.Empty) || txtNums.Text.Contains("[a-zA-z]"))
             {
-                Average("a");
-            }
-            else if (comboBox1.Text == "Multiplication")
-            {
-                //Multiplication();
-                Average("b");
-            }
-            else if (comboBox1.Text == "Addition")
-            {
-                //Addition();
-                Average("c");
-            }
-            else if (comboBox1.Text == "Subtraction")
-            {
-                /*Subtraction*//*()*//*;*/
-                Average("d");
-            }
-            else if (comboBox1.Text == "Divison")
-            {
-                //Division();
-                Average("e");
+                MessageBox.Show("The text box is empty! Enter some numbers by pasting them in, typing them in, or opening a text (.txt) file.", "Nothing in the text box!");
             }
             else
             {
-                lbPercentageDone.Text = "Failure! Restart program to proceed. Remember to save your numbers!";
+
+
+                if (comboBox1.Text == "Average")
+                {
+                    Average("a");
+                }
+                else if (comboBox1.Text == "Multiplication")
+                {
+                    //Multiplication();
+                    Average("b");
+                }
+                else if (comboBox1.Text == "Addition")
+                {
+                    //Addition();
+                    Average("c");
+                }
+                else if (comboBox1.Text == "Subtraction")
+                {
+                    /*Subtraction*//*()*//*;*/
+                    Average("d");
+                }
+                else if (comboBox1.Text == "Division")
+                {
+                    //Division();
+                    Average("e");
+                }
+                else
+                {
+                    lbPercentageDone.Text = "Failure! Restart program to proceed. Remember to save your numbers!";
+                }
             }
         }
 
@@ -116,25 +125,7 @@ namespace MathsOperations
                 for (int i = 0; i < numsina.Length; i++)
                 {
                     total = total + Convert.ToDouble(numsina[i]);
-                    pdone = i / numsina.Length * 100;
-                    lbDone.Text = pdone.ToString() + "%";
-                    //progressBar1.
-                    if (pdone <= 25)
-                    {
-                        lbDone.ForeColor = Color.Red;
-                    }
-                    else if (pdone > 25 && pdone <= 80)
-                    {
-                        lbDone.ForeColor = Color.Orange;
-                    }
-                    else if (pdone < 100)
-                    {
-                        lbDone.ForeColor = Color.LawnGreen;
-                    }
-                    else
-                    {
-                        lbDone.ForeColor = Color.DarkGreen;
-                    }
+                    progress(i, numsina.Length);
                 }
                 lbDone.Text = /*pdone.ToString() + */"100%";
                 lbDone.ForeColor = Color.DarkGreen;
@@ -160,29 +151,37 @@ namespace MathsOperations
                 for(int i = 0; i < numsina.Length; i++)
                 {
                     product = product * Convert.ToDouble(numsina[i]);
-                    pdone = i / numsina.Length * 100;
-                    lbDone.Text = pdone.ToString() + "%";
-                    //progressBar1.
-                    if (pdone <= 25)
-                    {
-                        lbDone.ForeColor = Color.Red;
-                    }
-                    else if (pdone > 25 && pdone <= 80)
-                    {
-                        lbDone.ForeColor = Color.Orange;
-                    }
-                    else if (pdone < 100)
-                    {
-                        lbDone.ForeColor = Color.LawnGreen;
-                    }
-                    else
-                    {
-                        lbDone.ForeColor = Color.DarkGreen;
-                    }
+                    progress(i, numsina.Length);
                 }
                 lbDone.Text = /*pdone.ToString() + */"100%";
                 lbDone.ForeColor = Color.DarkGreen;
                 lbAverage.Text = ($"Product: {product.ToString()}");
+            }
+            else if (code == "d")
+            {
+                int length = numsina.Length;
+                double total = 0;
+                for (int i = 0; i < numsina.Length; i++)
+                {
+                    total = total - Convert.ToDouble(numsina[i]);
+                    progress(i, numsina.Length);
+                }
+                lbDone.Text = /*pdone.ToString() + */"100%";
+                lbDone.ForeColor = Color.DarkGreen;
+                lbAverage.Text = ($"Total: {total}");
+            }
+            else if (code == "e")
+            {
+                int length = numsina.Length;
+                double total = 1;
+                for (int i = 0; i < numsina.Length; i++)
+                {
+                    total = total / Convert.ToDouble(numsina[i]);
+                    progress(i, numsina.Length);
+                }
+                lbDone.Text = /*pdone.ToString() + */"100%";
+                lbDone.ForeColor = Color.DarkGreen;
+                lbAverage.Text = ($"Total: {total}");
             }
             else
             {
@@ -192,6 +191,29 @@ namespace MathsOperations
             lbAverage.Enabled = true;
             lbAverage.Visible = true;
             
+        }
+
+        private void progress(int i, int length)
+        {
+            int pdone = i / length * 100;
+            lbDone.Text = pdone.ToString() + "%";
+            //progressBar1.
+            if (pdone <= 25)
+            {
+                lbDone.ForeColor = Color.Red;
+            }
+            else if (pdone > 25 && pdone <= 80)
+            {
+                lbDone.ForeColor = Color.Orange;
+            }
+            else if (pdone < 100)
+            {
+                lbDone.ForeColor = Color.LawnGreen;
+            }
+            else
+            {
+                lbDone.ForeColor = Color.DarkGreen;
+            }
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
@@ -222,6 +244,51 @@ namespace MathsOperations
 
                     txtNums.Text = fileContentOpen;
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string[] rawNumber = lbAverage.Text.Split(' ');
+            System.Windows.Forms.Clipboard.SetText(/*lbAverage.Text*/rawNumber[1]);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //SaveFileDialog sfd = new SaveFileDialog();
+            //sfd.Filter = "Text File|*.txt";
+            //sfd.Title = "Save your result.";
+            //sfd.ShowDialog();
+            //if (sfd.FileName != "")
+            //{
+
+            //}
+            if (MessageBox.Show($"You are about to save a text (.txt) file in your documents folder which is called {comboBox1.Text} and contains your result.", "Save Result", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                //some interesting behaviour here
+                //gbConfirmPasswordSave.Visible = false;
+                //this.Close();
+
+                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                /*DateTime */
+                DateTime current /* */= DateTime.Now;
+                string currentWritable = current/*.*/.ToString("yyyy.MM.dd.HH.mm.ss");
+                string locationPath = ($@"{docPath}\MathOperationSaves\{currentWritable}");
+                string locationPathIncFile = (/* +  + */$@"{locationPath}\{comboBox1.Text}.txt");
+
+                if (!Directory.Exists(locationPath))
+                {
+                    Directory.CreateDirectory(locationPath);
+                }
+
+                string[] rawNumber = lbAverage.Text.Split(' ');
+
+                using (StreamWriter outputFile = new StreamWriter(/*Path.Combine(docPath*//*locationPath*//*, $@"{locationPath}\{savepassworda}.txt")*/locationPathIncFile))
+                {
+                    outputFile.WriteLine(/*lbAverage.Text*/rawNumber[1]);
+                }
+
+                //btnSavePass.Enabled = false;
             }
         }
     }

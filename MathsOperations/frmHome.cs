@@ -50,5 +50,11 @@ namespace MathsOperations
             this.Hide();
             new frmInstructions/*Average*/().Show();
         }
+
+        private void btnStartWI_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAverage().Show();
+        }
     }
 }

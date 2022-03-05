@@ -20,6 +20,7 @@ namespace MathsOperations
             txtSeparationCharacter.MaxLength = 1;
             txtSeparationCharacter.Text = frmHome.Data.charseparate;
             file = @"settings.txt";
+            CenterToScreen();
         }
 
         private void frmSettings_Load(object sender, EventArgs e)

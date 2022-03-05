@@ -39,12 +39,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSettings
             // 
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(364, 12);
+            this.btnSettings.Location = new System.Drawing.Point(470, 54);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(362, 36);
             this.btnSettings.TabIndex = 1;
@@ -55,9 +57,9 @@
             // btnHome
             // 
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(732, 12);
+            this.btnHome.Location = new System.Drawing.Point(716, 12);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(100, 36);
+            this.btnHome.Size = new System.Drawing.Size(116, 36);
             this.btnHome.TabIndex = 2;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -130,9 +132,8 @@
             "Average",
             "Addition",
             "Multiplication",
-            "",
-            "Subtraction (Not finished)",
-            "Division (Not finished)"});
+            "Subtraction",
+            "Division"});
             this.comboBox1.Location = new System.Drawing.Point(18, 63);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(236, 38);
@@ -151,7 +152,7 @@
             // btnOpen
             // 
             this.btnOpen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(176, 12);
+            this.btnOpen.Location = new System.Drawing.Point(528, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(182, 36);
             this.btnOpen.TabIndex = 11;
@@ -159,11 +160,35 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(340, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Save Result";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(340, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(124, 36);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Copy Result";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmAverage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 489);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -195,5 +220,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
